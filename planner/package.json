@@ -1,0 +1,69 @@
+{
+  "name": "duenext",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "test": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:cyd": "node --test tests/cyd.test.mjs",
+    "typecheck": "tsc --noEmit --incremental false",
+    "emulators": "npx --yes firebase-tools@15.33.0 emulators:start --only auth,firestore --project demo-duenext",
+    "migrate": "node --conditions=react-server --import tsx scripts/migrate.ts",
+    "test:load": "tsx scripts/load-test.ts",
+    "emulators:integration": "npx --yes firebase-tools@15.33.0 emulators:exec --only auth,firestore --project demo-duenext-integration --config firebase.integration.json \"npm run test:integration\""
+  },
+  "dependencies": {
+    "@base-ui/react": "1.7.0",
+    "@shadcn/react": "0.3.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "cmdk": "1.1.1",
+    "date-fns": "4.1.0",
+    "embla-carousel-react": "8.5.2",
+    "firebase": "13.0.0",
+    "firebase-admin": "14.5.0",
+    "input-otp": "1.4.2",
+    "lucide-react": "1.31.0",
+    "next": "16.4.0",
+    "react": "19.2.6",
+    "react-day-picker": "9.8.1",
+    "react-dom": "19.2.6",
+    "react-resizable-panels": "4.5.8",
+    "recharts": "3.8.0",
+    "server-only": "0.0.1",
+    "tailwind-merge": "3.6.0",
+    "tw-animate-css": "1.4.0"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "6.0.0",
+    "@playwright/test": "1.64.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "oxfmt": "0.72.0",
+    "oxlint": "1.76.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "postcss": "^8.5.28",
+    "tailwindcss": "4.2.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.3"
+  },
+  "type": "module",
+  "overrides": {
+    "@grpc/grpc-js": "1.14.5",
+    "sharp": "0.35.5"
+  },
+  "optionalDependencies": {
+    "@oxfmt/binding-darwin-arm64": "0.72.0"
+  }
+}

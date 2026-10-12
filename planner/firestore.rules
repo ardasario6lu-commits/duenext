@@ -1,0 +1,7 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // All reads/writes use the authenticated server API. Admin SDK authorization is in lib/server.ts.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

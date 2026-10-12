@@ -1,0 +1,17 @@
+.git/
+.env
+.env.*
+.next/
+.next-test/
+node_modules/
+dist/
+outputs/
+work/
+*.tsbuildinfo
+migration-backups/
+output/
+test-results/
+playwright-report/
+.playwright-cli/
+*.log
+.next-design/

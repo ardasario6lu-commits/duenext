@@ -1,0 +1,34 @@
+# Local credentials and personal data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*service-account*.json
+*service_account*.json
+**/backups/
+**/migration-backups/
+*.sealed
+
+# Dependencies and generated output
+node_modules/
+.venv/
+.next/
+.next-*/
+.vinext/
+.wrangler/
+.vercel/
+.openai/
+.playwright-cli/
+build/
+dist/
+out/
+output/
+outputs/
+coverage/
+test-results/
+playwright-report/
+.arduino-libraries/
+*.tsbuildinfo
+*.log
+.DS_Store

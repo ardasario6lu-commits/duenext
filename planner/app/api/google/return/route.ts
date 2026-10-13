@@ -119,7 +119,7 @@ export async function GET(req: Request) {
       !response.ok ||
       !result.refresh_token ||
       !scopes.has('https://www.googleapis.com/auth/calendar.app.created') ||
-      !scopes.has('https://www.googleapis.com/auth/calendar.events.readonly')
+      !scopes.has('https://www.googleapis.com/auth/calendar.events.owned.readonly')
     )
       throw new HttpError(
         'Grant both requested calendar permissions to connect.',

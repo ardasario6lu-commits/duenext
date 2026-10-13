@@ -48,7 +48,8 @@ export default function Privacy() {
       <p>
         For support, contact the student project organizer who shared DueNext
         with your school. Do not send passwords or access tokens in support
-        messages. Support email: coming soon.
+        messages. Support email:{' '}
+        <a href="mailto:arda.sarioglu@icloud.com">arda.sarioglu@icloud.com</a>.
       </p>
       <Link href="/">Return to DueNext</Link>
     </main>

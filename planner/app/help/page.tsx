@@ -48,7 +48,8 @@ export default function Help() {
       <p>
         Use My data &amp; account to download your planner or delete it. Contact
         the project organizer for support; never share credentials. Support
-        email: coming soon.
+        email:{' '}
+        <a href="mailto:arda.sarioglu@icloud.com">arda.sarioglu@icloud.com</a>.
       </p>
       <a
         href="https://www.iatoday.org/tri-campus/graphic-calendar"

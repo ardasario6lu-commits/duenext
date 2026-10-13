@@ -273,6 +273,12 @@ it('binds OAuth state, checks permissions and rejects callback replay', async ()
     'test.apps.googleusercontent.com',
   );
   expect(url.searchParams.get('code_challenge')).toBeTruthy();
+  expect(new Set(url.searchParams.get('scope')!.split(' '))).toEqual(
+    new Set([
+      'https://www.googleapis.com/auth/calendar.app.created',
+      'https://www.googleapis.com/auth/calendar.events.owned.readonly',
+    ]),
+  );
   const savedFetch = globalThis.fetch;
   const network = vi
     .spyOn(globalThis, 'fetch')
@@ -284,7 +290,7 @@ it('binds OAuth state, checks permissions and rejects callback replay', async ()
         return Response.json({
           refresh_token: 'refresh-secret',
           scope:
-            'https://www.googleapis.com/auth/calendar.app.created https://www.googleapis.com/auth/calendar.events.readonly',
+            'https://www.googleapis.com/auth/calendar.app.created https://www.googleapis.com/auth/calendar.events.owned.readonly',
         });
       return savedFetch(input, init);
     });

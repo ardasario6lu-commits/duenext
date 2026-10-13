@@ -49,7 +49,7 @@ export async function POST(req: Request) {
       redirect_uri: origin + '/api/google/return',
       response_type: 'code',
       scope:
-        'https://www.googleapis.com/auth/calendar.app.created https://www.googleapis.com/auth/calendar.events.readonly',
+        'https://www.googleapis.com/auth/calendar.app.created https://www.googleapis.com/auth/calendar.events.owned.readonly',
       access_type: 'offline',
       prompt: 'consent',
       state,

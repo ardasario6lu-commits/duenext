@@ -70,20 +70,18 @@ References: [Google Calendar scopes](https://developers.google.com/workspace/cal
 [OAuth consent setup](https://developers.google.com/workspace/guides/configure-oauth-consent),
 [App verification](https://support.google.com/cloud/answer/13463073).
 
-## Setup status — 2026-10-13
+## Setup status — 2026-10-14
 
-The callback URL, app name/homepage/privacy branding, and the two narrowed scope
-declarations are saved in Google Cloud. The existing DueNext client ID is saved
-in Vercel production. The old client secret is masked and cannot be downloaded
-from Google; no matching credential file was found locally. A new secret must be
-created by the project owner and saved locally before it can be configured as a
-Vercel Secret. Existing secrets must not be deleted as part of this setup.
+The callback, branding, and two narrowed scope declarations are saved in Google
+Cloud. The client ID and server-only client secret are configured in Vercel.
+Calendar is enabled in production. The production build passed and the live OAuth
+callback responds with the configured handler. Google accepted the client credentials
+in a token-endpoint validation (an intentionally invalid code returned invalid_grant).
 
-Google requires a demo video and verification for event-reading access. Calendar
-remains disabled for general users until its credentials and verification are ready.
-The owner's OAuth consent and an actual import/export/disconnect test remain pending.
+Google branding and sensitive scope verification remain pending. The owner's
+OAuth consent and a real import/export/disconnect test also remain pending;
+enabling the connection does not establish that end-to-end sync has succeeded.
 
-The source passed 361 unit checks, lint on the affected files, type checking, and
-a production build. The OAuth callback is accepted by Google's authorization server.
-Emulator integration checks could not run because the local Java runtime is missing;
-the attempted official test-runtime download returned HTTP 403.
+The source previously passed 361 unit checks, focused lint, type checking, and a
+production build. Emulator checks could not run because Java is missing and the
+official test-runtime download returned HTTP 403.
